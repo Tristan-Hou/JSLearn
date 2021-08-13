@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 1. js作用域：变量或函数在某个范围内起效果
+        // 2. js作用域（es6）之前：全局作用域 局部作用域
+        // 3. 全局作用域：整个script标签 或者是一个单独的js文件
+
+        // 如果在函数内部没有声明，直接赋值的变量也属于全局变量
+        var num = 10; // 全局变量
+        console.log(num);
+        // 4. 局部作用域(函数作用域)：在函数内部
+        function fn() {
+            var num = 20; // 局部变量
+            console.log(num);
+            num2 = 40;  // 全局变量
+        }
+        fn();
+        console.log(num2);
+
+        // 全局变量只有浏览器关闭时才会销毁，占内存
+        // 局部变量程序执行完毕就会销毁
+
+        // js里没有块级作用域
+        // java:
+        // if(xx) {
+        //     int a = 10;
+        // }
+        // a 不能在外面调用
+        if(3 > 5) {
+            var num3 = 80;
+        }
+        console.log(num3);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

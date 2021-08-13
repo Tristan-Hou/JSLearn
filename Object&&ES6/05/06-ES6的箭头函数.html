@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const fn = () => {
+            console.log(123);
+        }
+        fn();
+
+        // 函数体只有一句代码，且代码执行结果就是返回值，大括号可省略
+        const sum = (a, b) => a + b;
+        console.log(sum(2, 3));
+
+        // 如果形参只有一个，可以省略小括号
+        const fnn = v => v;
+        console.log(fnn(4));
+
+        // 箭头函数不绑定this，this指的是函数定义位置的上下文this
+        const obj = {name: "to"};
+        function fn2() {
+            console.log(this);
+            return () => {
+                console.log(this);
+            }
+        }
+        const res = fn2();
+        res();
+        const resFn = fn2.call(obj);
+        resFn();
+
+        var age = 100;
+        var o = {
+            age: 20,
+            hi: function(){
+                console.log(this.age);
+            },
+            // 对象不产生作用域，因此say的this是window，this.age指向window.age
+            say: () => {
+                console.log(this.age);
+            }
+        };
+        o.hi();
+        o.say();
+    </script>
+</body>
+</html>

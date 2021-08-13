@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // .5特殊，向最大的方向取
+        console.log(Math.round(-1.5));
+        console.log(Math.round(-1.7));
+
+        console.log(Math.floor(1.35));
+        console.log(Math.ceil(1.2));
+
+        // random() 随机小数 0 =< x < 1
+        // 两个之间的随机数 且包含这两个数 Math.floor(Math.random() * (max - min + 1)) + min
+        function getRandom(max, min) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        console.log(getRandom(90, 2));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

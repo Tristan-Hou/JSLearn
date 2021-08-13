@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 闭包 closure 是指有权访问另一个函数作用域中变量的函数
+        // fun这个函数作用域访问了函数fn中局部变量num
+        function fn0() {
+            var num = 10;
+            function fun0() {
+                console.log(num);
+            }
+            fun0();
+        }
+        fn0();
+
+        // fn 外部的作用域也可以访问fn内部局部变量
+        function fn() {
+            var num = 10;
+            function fun() {
+                console.log(num);
+            }
+            return fun;
+        }
+        var f = fn();
+        f();
+
+    </script>
+</body>
+</html>

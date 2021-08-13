@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1. let 只能在块级作用域中使用
+        if(true) {
+            var aa = 20;
+        }
+        console.log(aa);
+        for(var i = 0; i < 2; i++) {
+
+        }
+        console.log(i);
+        // console.log("~~~~~~~~");
+        // if(true) {
+        //     let aaa = 20;
+        // }
+        // console.log(aaa);
+        // for(let j = 0; j < 2; j++) {
+
+        // }
+        // console.log(j);
+
+        // 2. 不存在变量提升
+        console.log(b);
+        var b = 220;
+        // console.log(bb);
+        // let bb = 20;
+
+        // 3. 暂时性死区
+        // if 块中使用 let 声明了 tmp，使得外面的var tmp 无效，所以在声明前使用let变量报错
+        // var tmp = 90;
+        // if(true) {
+        //     tmp = 'abc';
+        //     let tmp;
+        // }
+
+        // 例子
+        var arr = [];
+        for(var i = 0; i < 2; i++) {
+            arr[i] = function() {
+                console.log(i);
+            };
+        }
+        arr[0]();
+        arr[1]();
+
+        let arr1 = [];
+        for(let i = 0; i < 2; i++) {
+            arr1[i] = function() {
+                console.log(i);
+            };
+        }
+        arr1[0]();
+        arr1[1]();
+
+
+
+    </script>
+</body>
+</html>

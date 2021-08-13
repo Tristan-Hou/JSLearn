@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Star(uNmae, age) {
+            this.uNmae = uNmae;
+            this.age = age;
+        };
+        Star.prototype.sing = function() {
+
+        }
+        // Star.prototype.sex = 'male';  // 2. 其次在原型对象中查找
+        // Object.prototype.sex = 'male';  // 3. 再其次在Object的prototype查找
+        var obj1 = new Star("s", 1);
+        // obj1.sex = 'male';  // 1. 现在对象中查找
+        console.log(obj1.sex);
+    </script>
+</body>
+</html>

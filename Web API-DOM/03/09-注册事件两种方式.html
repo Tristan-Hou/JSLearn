@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>传统注册事件</button>
+    <button>方法监听注册事件</button>
+    <button>attachEvent</button>
+    <script>
+        var btns = document.querySelectorAll('button');
+        // 1. 传统注册事件 on开头 onclick
+        btns[0].onclick = function () {
+            alert('hi');
+        }
+        // 1）唯一性 只能设置一个处理函数，后面的注册覆盖前面的
+        btns[0].onclick = function () {
+            alert('hao a u');
+        }
+
+        // 2. 方法监听注册事件 eventTarget.addEventListener(type, listener, [, capture]);
+        btns[1].addEventListener('click', function() {
+            alert('hi 22');
+        })
+        // 1) 同一个元素和事件可以添加多个处理程序
+        btns[1].addEventListener('click', function() {
+            alert('hi 33');
+        })
+
+        // 3. attachEvent ie9以前支持（chrome不支持）
+        btns[2].attachEvent('onclick', function() {
+            alert('hi 123123')
+        })
+    </script>
+</body>
+</html>

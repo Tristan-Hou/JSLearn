@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        uname {
+
+        }
+        span {
+            color: #aaa;
+            font-size: 14px;
+        }
+        .right {
+            color: green;
+        }
+        .wrong {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" class="uname">
+    <span>输入</span>
+    <script>
+        // 量词：用来设定某个模式出现的次数
+        var reg = /^[a-zA-Z0-9_-]$/;  // 只能多选1，1个字符
+        console.log(reg.test("aa"));
+
+        var reg1 = /^[a-zA-Z0-9_-]{6,10}$/;
+        console.log(reg1.test("aa"));
+        console.log(reg1.test("hohihij"));
+        console.log(reg1.test("7765hhj88h1"));
+
+        var uname = document.querySelector('.uname');
+        var span = document.querySelector('span');
+        uname.onblur = function() {
+            if(reg1.test(this.value)) {
+                span.className = 'right';
+                span.innerHTML = 'right';
+            } else {
+                span.className = 'wrong';
+                span.innerHTML = 'wrong';
+            }
+        }
+    </script>
+</body>
+</html>

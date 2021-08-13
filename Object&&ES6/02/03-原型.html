@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Star(uNmae, age) {
+            this.uNmae = uNmae;
+            this.age = age;
+            this.sing = function() {
+                console.log();
+            }
+        };
+        var obj1 = new Star("s", 1);
+        var obj2 = new Star("aa", 1);
+        console.log(obj1.sing === obj2.sing);
+        // 没哟个对象都有prototype对象
+        // 把不变的方法直接定义在prototype对象上，这样所有对象实例都共享该方法
+        function Star2(uNmae, age) {
+            this.uNmae = uNmae;
+            this.age = age;
+            // this.sing = function() {
+            //     console.log();
+            // }
+        };
+        Star2.prototype.sing = function() {
+
+        }
+        var obj3 = new Star2("s", 1);
+        var obj4 = new Star2("aa", 1);
+        console.log(obj3.sing === obj4.sing);
+        console.log(obj3); // 对象身上系统自动添加一个__proty__，指向构造函数原型对象 prototype
+        console.log(obj3.__proto__ === Star2.prototype); 
+        // 方法查找规则：1. 首先去看对象（obj3）身上是否有sing方法，如果有就执行这个对象上的方法
+        //             2. 如果没有sing这个方法，因为有__proto__的存在，就去构造函数原型对象prototype身上去查找sing这个方法
+
+        console.log("~~~~~~~~");
+        // 
+        console.log(Star2.prototype);
+        console.log(obj3.__proto__);
+        console.log(Star2.prototype.constructor);
+        console.log(obj3.__proto__.constructor);
+
+        console.log("~~~~~~~~");
+        // 很多时候需要利用constructor只会原来的构造函数
+        function Star3(uNmae, age) {
+            this.uNmae = uNmae;
+            this.age = age;
+        };
+        Star3.prototype = {
+            sing: function() {
+
+            },
+            movie: function() {
+
+            }
+        }
+        var obj5 = new Star3("55", 1);
+        console.log(Star3.prototype.constructor);
+        console.log(obj5.__proto__.constructor);
+
+        console.log("~~~~~~~~");
+        function Star4(uNmae, age) {
+            this.uNmae = uNmae;
+            this.age = age;
+        };
+        Star4.prototype = {
+            constructor: Star4,
+            sing: function() {
+
+            },
+            movie: function() {
+
+            }
+        }
+        var obj6 = new Star4("55", 1);
+        console.log(Star4.prototype.constructor);
+        console.log(obj6.__proto__.constructor);
+
+        console.log("~~~~~~~~");
+        // 只要是对象就有__proto__原型，指向原型对象
+        console.log(Star4.prototype);
+        console.log(Star4.prototype.__proto__ === Object.prototype);
+        // Star4原型对象里面的__proto__指向的是Object.prototype
+        console.log(Star4.prototype.__proto__.constructor);
+        console.log(Object.prototype.constructor);
+        console.log(Object.prototype.__proto__);
+    </script>
+</body>
+</html>

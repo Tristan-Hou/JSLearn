@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 定义新属性或修改原有属性
+        var obj = {
+            id: 1,
+            pname: '小',
+            age : 2
+        };
+        // 1. 以前添加、修改属性的方式
+        // obj.num = 1000;
+        // obj.age = 80;
+        // console.log(obj);
+        // 2. Object.defineProperty(obj, property, descriptor) 新方式
+        Object.defineProperty(obj, 'num', {
+            value: 1000,
+            enumerable: true
+        });
+        console.log(obj);
+        Object.defineProperty(obj, 'age', {
+            value: 80
+        });
+        console.log(obj);
+        Object.defineProperty(obj, 'id', {
+            // 如果只为 false 不允许修改这个属性值
+            writable: false
+        });
+        obj.id = 2;
+        console.log(obj);
+        Object.defineProperty(obj, 'pname', {
+            value: 'hhhhhhh',
+            writable: false,
+            // 如果为 false 不允许遍历，默认false
+            enumerable: false,
+            // 如果为 false 不允许删除，默认false; 且不允许修改第三个参数里的特性
+            configurable: false
+        });
+        console.log(obj);
+        console.log(Object.keys(obj));
+        delete obj.pname;
+        console.log(obj);
+        Object.defineProperty(obj, 'pname', {
+            value: 'hhhhhhh',
+            writable: true,
+            // 如果为 false 不允许遍历，默认false
+            enumerable: true,
+            // 如果为 false 不允许删除，默认false
+            configurable: true
+        });
+        console.log(obj);
+    </script>
+</body>
+</html>

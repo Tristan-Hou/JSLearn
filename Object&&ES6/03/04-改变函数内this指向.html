@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1. call 主要用于继承，son 内部 father.call()
+        var o0 = {
+            name: 'call'
+        }
+
+        function fn0() {
+            console.log(this);
+        }
+
+        fn0();
+        fn0.call(o0);
+        console.log("~~~~~~~");
+
+        // 2. apply() 
+        //    (1). 可以调用函数，也可以改变函数内部this指向
+        //    (2). 参数必须是数组形式
+        var o1 = {
+            name: 'apply'
+        }
+
+        function fn1(arr) {
+            console.log(this);
+            console.log(arr);
+        }
+        
+        fn1.apply(o1, ['pink']);
+        //    (3).apply 主要用用
+        var arr = [1,4,33,5,222];
+        // var max = Math.max.apply(null, arr);
+        var max = Math.max.apply(Math, arr);
+        console.log(max);
+        console.log("~~~~~~~");
+
+        // 3. bind()
+        var o = {
+            name: 'bind'
+        }
+
+        function fn(a, b) {
+            console.log(this);
+            console.log(a +b);
+        }
+        var f = fn.bind(o, 1, 2); 
+        // 不会调用函数，可以改变this指向，会绑定之后产生新函数
+        f();
+        // 一般在不需要立即调用时使用，如 setTimeout内部回调函数
+
+
+    </script>
+</body>
+</html>

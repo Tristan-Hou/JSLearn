@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 创建数组
+        // 1. 利用数组字面量
+        var arr = [1, 2, 3];
+        console.log(arr);
+
+        // 2. 利用new Array()
+        var arr1 = new Array(3); // 数组长度为3，里面有3个空元素
+        var arr2 = new Array(2, 3); // 等价于 [2, 3]，里面有两个元素2，3
+        console.log(arr1);
+        console.log(arr2);
+
+        // 检测是否为数组
+        // 1. instanceOf 运算符，检测是否为数组
+        var arr3 = [];
+        var obj = {};
+        console.log(arr3 instanceof Array);
+        console.log(obj instanceof Array);
+        // 2. Array.isArray()
+        console.log(Array.isArray(arr3));
+        console.log(Array.isArray(obj));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

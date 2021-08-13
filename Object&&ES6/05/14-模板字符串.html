@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let name = `zzzz`;
+        let sayHello = `hello my name is ${name}`;
+        console.log(name);
+        console.log(sayHello);
+
+        let result = {
+            name: 'tm',
+            age: 20
+        };
+        let html = `
+                <div>
+                    <span>${result.name}</span>
+                    <span>${result.age}</span>
+                </div>`;
+        console.log(html);
+
+        var fn = () => {
+            return "hahaha";
+        }
+        let html1 = `hello ${fn()}`;
+        console.log(html1);
+    </script>
+</body>
+</html>

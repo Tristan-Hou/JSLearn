@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var obj = {
+            id: 1,
+            name: 'tom',
+            msg: {
+                age: 18
+            }
+        };
+        var o = {};
+        // 浅拷贝
+        for(var k in obj) {
+            o[k] = obj[k];
+        }
+        console.log(o);
+        // 浅拷贝
+        Object.assign(o, obj);
+        console.log(o);
+
+        // 深拷贝
+        function deepcopy(newObj, oldObj) {
+            for(var k in oldObj) {
+                var item = oldObj[k];
+                if(item instanceof Array) {
+                    newObj[k] = [];
+                    deepcopy(newObj[k], item);
+                } else if(item instanceof Object) {
+                    newObj[k] = {};
+                    deepcopy(newObj[k], item);
+                } else {
+                    newObj[k] = item;
+                }
+            }
+        }
+        deepcopy(o, obj);
+        console.log(o);
+    </script>
+</body>
+</html>

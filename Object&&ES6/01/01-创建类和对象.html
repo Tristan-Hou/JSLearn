@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 对比 ： ECMAScript-04-18利用对象字面量 and 22new关键字执行过程
+        class Person {
+            constructor(uname, age) {
+                this.uname = uname;
+                this.age = age;
+            }
+            // 类里所有函数不需要加function
+            // 讴歌函数之间不需要添加“,”分割
+            sing() {
+
+            }
+        }
+        var ldh = new Person("xiaoming", 19);
+        ldh.sing();
+        console.log(ldh);
+    </script>
+</body>
+</html>

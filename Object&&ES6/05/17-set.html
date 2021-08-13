@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const s1 = new Set();
+        console.log(s1.size);
+
+        console.log("~~~~~~~~~~");
+        const s2 = new Set(['a', 'b']);
+        console.log(s2.size);
+
+        console.log("~~~~~~~~~~");
+        const s3 = new Set(['a', 'a', 'b', 'b']);
+        console.log(s3.size);
+        const ary3 = [...s3];
+        console.log(ary3);
+
+        console.log("~~~~~~~~~~");
+        const s4 = new Set();
+        s4.add('a').add('b');
+        console.log(s4);
+        let r1 = s4.delete('a');
+        console.log(r1);
+        console.log(s4);
+        const r2 = s4.has('b');
+        console.log(r2);
+        s4.clear();
+        console.log(s4);
+
+        console.log("~~~~~~~~~~");
+        const s5 = new Set(['a', 'b', 'c']);
+        s5.forEach(item => {
+            console.log(item);
+        });
+    </script>
+</body>
+</html>

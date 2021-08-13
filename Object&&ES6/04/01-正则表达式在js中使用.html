@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1. 利用RegExp对象创建
+        var regexp = new RegExp(/123/);
+        console.log(regexp);
+        // 2. 利用字面量创建
+        var rg = /123/;
+        console.log(rg);
+        // 3. test()用来检测正则表达式
+        console.log(rg.test(123));
+    </script>
+</body>
+</html>

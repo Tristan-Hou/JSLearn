@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var rg = /abc/; 只要包含abc就可以
+        // 字符类：[]表示有一系列字符供选择，之遥匹配一个就可以
+        var rg = /[abc]/; // 只要包含有a或b或c 都返回true
+        console.log(rg.test("andy"));
+        console.log(rg.test("baby"));
+        console.log(rg.test("color"));
+        console.log(rg.test("red")); //false
+
+        var rg1 = /^[abc]$/; // 三选一，只有是a或者b或者c这三个字母，才返回true
+        console.log(rg1.test("aa"));
+        console.log(rg1.test("a"));
+        console.log(rg1.test("b"));
+        console.log(rg1.test('c')); //true
+        console.log(rg1.test("abc")); //false
+
+        // [-] 方括号内部-  范围符
+        var rg2 = /^[a-z]$/;
+        console.log(rg2.test("a"));
+        console.log(rg2.test("z"));
+        console.log(rg2.test("A"));
+        console.log(rg2.test(":"));
+        console.log(rg2.test("aa"));
+
+        // 字符组合
+        var rg3 = /^[a-zA-Z0-9_-]$/;
+        console.log(rg3.test("D"));
+        console.log(rg3.test("8"));
+        console.log(rg3.test("_"));
+        console.log(rg3.test("-"));
+        console.log(rg3.test("!"));
+
+        console.log("~~~~~~~~");
+        // 中括号中的 ^ 表示取反（不能包含） 与边界符^ 不同
+        var rg4 = /^[^a-zA-Z0-9_-]$/;
+        console.log(rg4.test("D"));
+        console.log(rg4.test("8"));
+        console.log(rg4.test("_"));
+        console.log(rg4.test("-"));
+        console.log(rg4.test("!"));
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // Date() 是日期对象，是一个构造函数，必须用new
+        var date = new Date();
+        console.log(date);
+        // 参数常用写法 数字型 2019，10，1 字符串型 ’2019-10-1 8：8：8‘
+        var date1 = new Date(2019, 10, 1);
+        console.log(date1);
+        var date2 = new Date('2019-10-1 8:8:8');
+        console.log(date2);
+
+        // 格式化日期
+        console.log(date.getFullYear()); // 当前日期的年
+        console.log(date.getMonth()); // 月份 0-11
+        console.log(date.getDate());
+        console.log(date.getDay()); // 星期 周日为0
+        console.log(date.getHours());
+        console.log(date.getMinutes());
+        console.log(date.getSeconds());
+
+        // 毫秒数
+        // 1
+        console.log(date.valueOf()); // 距离1970的毫秒数
+        console.log(date.getTime()); // 距离1970的毫秒数
+        // 2
+        var date1 = +new Date() // 最常用
+        console.log(date1);
+        // 3
+        console.log(Date.now());
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

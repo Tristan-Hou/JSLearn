@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 利用对象字面量创建对象
+        // var obj = {}; 空对象
+        var obj = {
+            uname: '张三',
+            age: 18,
+            sex: 'male',
+            sayHi: function() { // 类似匿名函数 var sayHi = function() {}
+                console.log('hi');
+            }
+        }
+
+        // new 方式
+        var obj1 = new Object(); // 空对象
+        obj.uname = '李四';
+        obj.age = 20;
+        obj.sex = 'female';
+        obj.sayHi = function() { 
+            console.log('no hi');
+        }
+
+        // 构造函数
+        // 构造函数首字母大写
+        function Star(uname, age, sex) {
+            this.uname = uname;
+            this.age = age;
+            this.sex = sex;
+            this.sing = function() {
+                console.log('aaaaaa');
+            }
+        }
+        var obj2 = new Star('王五', 30, 'color');
+        console.log(typeof obj2);
+
+        // 对象属性、方法使用
+        console.log(obj.uname);
+        console.log(obj['age']);
+        obj.sayHi();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

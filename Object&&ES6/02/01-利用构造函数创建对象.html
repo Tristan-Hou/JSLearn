@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // es6 之前只能通过构造函数创建对象，不能用class
+        // 高版本浏览器支持es6，但也只支持部分
+
+        // new object()
+        class Person {
+            constructor() {
+
+            }
+        };
+        var obj1 = new Person();
+        // 对象字面量
+        var obj2 = {};
+        // 构造函数
+        // 1. 内存创建空对象
+        // 2. this指向对象
+        // 3. 执行构造函数里的代码
+        // 4. 返回
+        function Star(uNmae, age) {
+            this.uNmae = uNmae;
+            this.age = age;
+            this.sing = function() {
+                console.log();
+            }
+        };
+        function test() {
+            console.log("test");
+        }
+        var obj3 = new Star("s", 1);
+        test();
+        var test = new test();
+        
+        // 实例成员：构造函数内部通过this添加 uname age sing
+        //         只能通过实例化对象访问
+        // console.log(Star.uNmae); //错误
+        // 静态成员：构造函数本身上添加的成员
+        //         静态成员之鞥通过构造函数访问
+        Star.sex = 'male';
+        console.log(Star.sex);
+        // console.log(obj3.sex); // 错误
+    </script>
+</body>
+</html>
